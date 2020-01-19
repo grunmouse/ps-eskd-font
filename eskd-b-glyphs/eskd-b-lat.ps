@@ -1,0 +1,366 @@
+%Латинские глифы для ЕСКД Б
+<<
+	/LatinCapitalLetterA {
+		CyrillicCapitalLetterA
+	}
+	/LatinCapitalLetterB {
+		CyrillicCapitalLetterVe
+	}
+	/LatinCapitalLetterC {
+		CyrillicCapitalLetterEs
+	}
+	/LatinCapitalLetterD {
+		6 setconfig 
+		uppertop
+		A moveto
+		B lineto
+		1.5 D gliphC
+		
+	}
+	/LatinCapitalLetterE {
+		CyrillicCapitalLetterIe
+	}
+	/LatinCapitalLetterF {
+		5 setconfig 
+		uppertop
+		middleceil
+		A moveto
+		B lineto
+		C lineto
+		M moveto
+		O lineto
+		
+	}
+	/LatinCapitalLetterG {
+		6 setconfig
+		uppertop
+		middleceil
+		C moveto
+		1.5 A gliphC
+		O lineto
+		-1 0 rlineto
+	}
+	/LatinCapitalLetterH {
+		6 setconfig
+		uppertop
+		middleceil
+		A moveto
+		C middle gliphH
+	}
+	/LatinCapitalLetterI {
+		1 setconfig
+		uppertop
+		A moveto B lineto
+	}
+	/LatinCapitalLetterJ {
+		4 setconfig
+		uppertop
+		C moveto
+		A 2 arcYX
+	}
+	/LatinCapitalLetterK {
+		6 setconfig
+		uppertop
+		middlefloor
+		A moveto B lineto
+		M moveto C lineto
+		M C 2 2crossv moveto
+		D lineto
+	}
+	/LatinCapitalLetterL {
+		5 setconfig
+		uppertop
+		B moveto
+		A lineto
+		D lineto
+	}
+	/LatinCapitalLetterM {
+		CyrillicCapitalLetterEm
+	}
+	/LatinCapitalLetterN {
+		6 setconfig
+		uppertop
+		1 setlinejoin
+		A moveto
+		C gliphN
+	}
+	/LatinCapitalLetterO {
+		6 setconfig
+		uppertop
+		A moveto
+		2 C gliphO
+	}
+	/LatinCapitalLetterP {
+		6 setconfig uppertop middlefloor
+		A moveto
+		B lineto
+		M moveto
+		1 C gliphC
+	}
+	/LatinCapitalLetterQ {
+		6 setconfig
+		uppertop
+		A moveto
+		2 C gliphO
+		3 2 moveto right inc 0 lineto
+	}
+	/LatinCapitalLetterR {
+		6 setconfig uppertop middlefloor
+		A moveto
+		B lineto
+		M moveto
+		1 C gliphC
+		Q moveto D lineto
+	}
+	/LatinCapitalLetterS {	
+		6 setconfig uppertop
+		/middle top 2 div def
+		/k -0.6 def
+		/F center neg dup k mul Q 2add 2def
+		/G center dup k mul Q 2add 2def
+		/E right top 0.5 sub 2def
+		/H 0 0.5 2def
+		
+		E moveto
+		N lineto
+		B F B B F 2center max-arct arct
+		F Q F Q max-arct arct
+		G D G G D 2center max-arct arct
+		D P D P max-arct arct
+		P lineto
+		H lineto
+	}
+	/LatinCapitalLetterT {
+		6 setconfig uppertop
+		B moveto C lineto
+		P moveto N lineto
+	}
+	/LatinCapitalLetterU {
+		6 setconfig uppertop
+		B moveto
+		1.5 D gliphU
+	}
+	/LatinCapitalLetterV {
+		7 setconfig uppertop
+		1 setlinejoin
+		B moveto
+		P lineto
+		C lineto
+	}
+	/LatinCapitalLetterW {
+		9 setconfig uppertop
+		1 setlinejoin
+		/middle top 3 sub def
+		B moveto
+		A P 2center lineto
+		Q lineto
+		P D 2center lineto
+		C lineto
+	}
+	/LatinCapitalLetterX {
+		7 setconfig 
+		uppertop
+		A moveto
+		C gliphX
+	}
+	/LatinCapitalLetterY {
+		7 setconfig
+		uppertop
+		middleceil
+		B moveto Q lineto C lineto
+		P moveto Q lineto
+		
+	}
+	/LatinCapitalLetterZ {
+		6 setconfig
+		uppertop
+		1 setlinejoin
+		B moveto
+		D gliphZ
+	}
+	
+	/LatinSmallLetterA {
+		5 setconfig lowertop
+		C moveto
+		1 A gliphOa
+		C moveto
+		D D 1 0 2add 1 arct
+	}
+	/LatinSmallLetterB {
+		5 setconfig lowermiddle
+		B moveto
+		A lineto
+		1 O gliphC
+	}
+	/LatinSmallLetterC {
+		4 setconfig lowertop
+		C moveto
+		1 A gliphC
+	}
+	/LatinSmallLetterD {
+		5 setconfig lowermiddle
+		C moveto
+		D lineto
+		1 M gliphC
+	}
+	/LatinSmallLetterE {
+		5 setconfig lowertop
+		middleceil
+		D moveto
+		A B 2 arct
+		B C 1 arct
+		C O 1 arct
+		O lineto
+		M lineto
+	}
+	/LatinSmallLetterF {
+		2 setconfig lowermiddle
+		/right inc
+		A moveto
+		C 1.5 arcYX
+		/left dec 
+		M moveto O lineto
+	}
+	/LatinSmallLetterG {
+		5 setconfig lowertop
+		/middle bottom def
+		/bottom bottom 3 sub def
+		O moveto
+		1 B gliphC
+		A 1 arcYX
+	}
+	/LatinSmallLetterH {
+		5 setconfig lowermiddle
+		A moveto B lineto
+		M moveto
+		D 1 arcXY
+	}
+	/LatinSmallLetterI {
+		1 setconfig lowertop
+		A moveto B lineto
+		stroke
+		subglyph /dot get exec
+	}
+	/LatinSmallLetterJ {
+		1 setconfig lowertop
+		/bottom bottom 3 sub def
+		/left left 2 sub def
+		C moveto A 2 arcYX
+		stroke
+		subglyph /dot get exec
+	}
+	/LatinSmallLetterK {
+		5 setconfig lowertop
+		middleceil
+		B 0 3 2add moveto
+		A lineto
+		M moveto C lineto
+		M C 1.5 2crossv moveto
+		D lineto
+	}
+	/LatinSmallLetterL {
+		2 setconfig lowermiddle
+		B moveto
+		D 1 arcYX
+	}
+	/LatinSmallLetterM {
+		7 setconfig lowertop
+		A moveto B lineto
+		D 1 arcXY
+		N moveto P lineto
+	}
+	/LatinSmallLetterN {
+		5 setconfig lowertop
+		A moveto B lineto
+		D 1 arcXY
+	}
+	/LatinSmallLetterO {
+		5 setconfig lowertop
+		A moveto 1 C gliphO
+	}
+	/LatinSmallLetterP {
+		5 setconfig lowertop
+		/middle bottom def
+		/bottom bottom 3 sub def
+		A moveto B lineto
+		1.5 O gliphC
+	}
+	/LatinSmallLetterQ {
+		5 setconfig lowertop
+		/middle bottom def
+		/bottom bottom 3 sub def
+		D moveto C lineto
+		1.5 M gliphC
+	}
+	/LatinSmallLetterR {
+		4 setconfig lowertop
+		A moveto B lineto
+		C D 1 arct
+	}
+	/LatinSmallLetterS {
+		4 setconfig lowertop
+		/middle top 2 div def
+		/k -0.6 def
+		/F center neg dup k mul Q 2add 2def
+		/G center dup k mul Q 2add 2def
+		/E right top 0.5 sub 2def
+		/H 0 0.5 2def
+		
+		E moveto
+		N lineto
+		B F B B F 2center max-arct arct
+		F Q F Q max-arct arct
+		G D G G D 2center max-arct arct
+		D P D P max-arct arct
+		P lineto
+		H lineto
+	}
+	/LatinSmallLetterT {
+		2 setconfig lowermiddle
+		A moveto B lineto
+		/left dec /right inc
+		M moveto O lineto
+	}
+	/LatinSmallLetterU {
+		5 setconfig lowertop
+		B moveto D 1.5 arcYX
+		C lineto
+	}
+	/LatinSmallLetterV {
+		5 setconfig lowertop
+		1 setlinejoin
+		B moveto
+		P lineto
+		C lineto
+	}
+	/LatinSmallLetterW {
+		7 setconfig lowertop
+		1 setlinejoin
+		middleceil
+		B moveto
+		A P 2center lineto
+		Q lineto
+		P D 2center lineto
+		C lineto
+	}
+	/LatinSmallLetterX {
+		5 setconfig lowertop
+		A moveto C gliphX
+	}
+	/LatinSmallLetterY {
+		5 setconfig lowertop
+		/middle bottom def
+		/bottom -3 def
+		B moveto Q lineto
+		C moveto
+		Q C bottom 2crossh
+		A 1 arct
+	}
+	/LatinSmallLetterZ {
+		5 setconfig lowertop
+		1 setlinejoin
+		B moveto
+		D gliphZ
+	}
+
+>>

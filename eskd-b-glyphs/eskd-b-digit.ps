@@ -1,0 +1,103 @@
+%Глифы цифры ЕСКД Б
+<<
+	/DigitZero {
+		5 setconfig uppertop middlefloor
+		0 0 moveto
+		2 right top gliphO
+		
+	}
+	/DigitOne {
+		3 setconfig uppertop middleceil
+		1 setlinejoin
+		0 top 2 sub moveto
+		right top lineto
+		right 0 lineto
+		
+	}
+	/DigitTwo {
+		5 setconfig uppertop
+		0 top 2 sub setMNOPQ
+		D moveto
+		A lineto
+		O lineto
+		C B 2 arct
+		B M 2 arct 	
+	}	
+	/DigitThree {
+		5 setconfig uppertop middleceil
+		0 0 moveto
+		right top beginABCD
+			1 middle setMNOPQ
+			D O 2 arct
+			O Q 2 arct
+			Q moveto
+			O C 1.5 arct
+			C B 1.5 arct
+			B lineto
+		end
+		
+	}
+	/DigitFour {
+		5 setconfig uppertop middlefloor
+		right top moveto
+		0 2 lineto
+		right 1 add 2 lineto
+		right 0 moveto
+		right middle lineto
+		
+	}
+	/DigitFive {
+		5 setconfig uppertop middleceil
+		0 0 moveto
+		2 right middle gliphC
+		0 top lineto
+		right top lineto
+		
+	}
+	/DigitSix {
+		5 setconfig uppertop middleceil
+		right top moveto
+		0 0 beginABCD
+			center middle setMNOPQ
+			-1 0 rmoveto
+			D C 3 arct
+			1 [C B M O] many-arct
+			lineto
+		end
+		
+	}
+	/DigitSeven {
+		5 setconfig uppertop middlefloor
+		1 0 moveto
+		right top lineto
+		0 top lineto
+		0 -1 rlineto
+		
+	}
+	/DigitEight {
+		5 setconfig uppertop middleceil
+		0 0 moveto
+		right top beginABCD
+			center middle setMNOPQ
+			Q moveto
+			2 [O C B M O D] many-arct
+			2pop
+			1.5 [D A M] many-arct
+			Q 2 arct
+		end
+		
+	}	
+	/DigitNine {
+		5 setconfig uppertop middlefloor
+		0 0 moveto
+		right top beginABCD
+			center middle setMNOPQ
+			1 0 rmoveto
+			D C 3 arct
+			1 [C B M O] many-arct
+			lineto
+		end
+		
+	}
+
+>>

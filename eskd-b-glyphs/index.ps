@@ -1,0 +1,40 @@
+%Словарь всех определённых глифов ЕСКД Б
+{(../../ps-lib/)(traverse.ps) steal} /many-dict-copy ifnotkey
+
+/eskd-b-glyphs
+	[
+		(eskd-b-cyr.ps) stealfile
+		(eskd-b-digit.ps) stealfile
+		(eskd-b-lat.ps) stealfile
+		(eskd-b-sub-digit.ps) stealfile
+		<<
+			/.notdef {}
+			/Null {
+				0 setconfig
+			}
+			/Space {
+				e setconfig
+			}
+			/DiameterSign {
+				gsave
+					7 setconfig lowertop
+					/middle 3 def
+					unoblique
+					newpath
+					M moveto
+					B C 3 arct
+					C D 3 arct
+					D A 3 arct
+					A B 3 arct
+					closepath
+					/top inc /right inc
+					/left dec /bottom dec
+					A moveto C lineto
+					stroke
+				grestore
+			}
+		>>
+	]
+	many-dict-copy
+
+def

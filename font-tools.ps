@@ -1,0 +1,170 @@
+%% Набор процедур, рисующих характерные, встречающиеся в шрифтах элементы
+
+
+	
+	%Определяет и делает текущим словарь, содержащий координаты точек прямоугольника ABCD
+	%где A = currentpoint, C = cx, cy,
+	%B = ax, cy; D = cx, ay
+	%AB - вертикаль, AD - горизонталь
+	%[cx, cy]
+	/beginABCD {
+		0 dict begin
+			currentpoint 2exch
+			setABCD
+	} def
+	
+	%[Ax, Ay, Cx, Cy]
+	/setABCD {
+		/C 2edef
+		/A 2edef
+		A C 2swap-y
+		/D 2edef
+		/B 2edef
+	} def
+	
+	%Определяет в текущем словаре ABCD точки
+	%[x, y]
+	%BNC
+	%MQO
+	%APD
+	/setMNOPQ {
+		/Q 2edef
+		A Q 2swap-y
+		/P 2edef
+		/M 2edef
+		Q C 2swap-y
+		/O 2edef
+		/N 2edef
+	} def
+	
+	%рисует две линии буквой X, причём одна из них - из текущей точки в переданную
+	%[x2, y2]
+	/gliphX {
+		beginABCD
+			C lineto
+			B moveto
+			D lineto
+			C moveto
+		end
+	} def
+	
+	%рисует три линии буквой Z таким образом, чтобы придти из текущей точки в переданную
+	%[x2, y2]
+	/gliphZ {
+		beginABCD
+			D lineto
+			B lineto
+			C lineto
+		end
+	} def
+	
+	%рисует три линии буквой N таким образом, чтобы придти из текущей точки в переданную
+	%[x2, y2]
+	/gliphN {
+		beginABCD
+			B lineto
+			D lineto
+			C lineto
+		end
+	} def
+	
+	%[x2, y2, middle]
+	/gliphH {
+		0 dict begin
+			3 1 roll
+			currentpoint 2exch
+			setABCD
+			0 exch setMNOPQ
+			
+			A moveto B lineto
+			M moveto O lineto
+			D moveto C lineto
+		end
+	} def
+	
+	%[r, x2, y2]
+	%Рисует линию A-D-C-B скругляя углы D и C радиусом r
+	/gliphC {
+		beginABCD
+			/r exch def
+			r [D C B] many-arct
+			lineto
+		end
+	} def
+
+	%[r, x2, y2]
+	%Рисует линию A-B-C-D скругляя углы B и C радиусом r
+	/gliphU {
+		beginABCD
+			/r exch def
+			B C r arct
+			C D r arct
+			D lineto
+		end
+	} def
+
+	%Рисует прямоугольник со скруглёнными углами, начиная и заканчивая в середине стороны AB
+	%[r, x2, y2]
+	/gliphO {
+		beginABCD
+			/r exch def
+			/M B A 2add 2 2div 2def
+			M moveto
+			r [B C D A M] many-arct
+			lineto
+		end
+	} def
+	
+	%Рисует прямоугольник со скруглёнными углами B C D, но нескруглённым A
+	%[r, x2, y2]
+	/gliphOa {
+		beginABCD
+			/r exch def
+			r [B C D A] many-arct
+			lineto
+		end
+	} def
+	
+	%рисует скруглённый прямой угол, начиная по вертикали
+	%[x2, y2, r]
+	/arcYX {
+		0 dict begin
+			/r exch def
+			currentpoint 2exch
+			setABCD
+			B C r arct
+			C lineto
+		end
+	} def
+	
+	%рисует скруглённый прямой угол, начиная по горизонтали
+	%[x2, y2, r]
+	/arcXY {
+		0 dict begin
+			/r exch def
+			currentpoint 2exch
+			setABCD
+			D C r arct
+			C lineto
+		end
+	} def
+	
+	%Рисует скруглённую ломаную. После завершения работы в стеке xn, yn
+	%[r, [x1, y1, ... xn, yn]]
+	/many-arct {
+		0 dict begin
+			/points exch def
+			/r exch def
+			/n points length 2 div ceiling cvi def
+			points aload pop
+			n -1 2
+			{
+				/i exch def
+				i -1 2roll %крутим первую точку наружу
+				i 1 sub 2index %дублируем на вершину стека вторую точку (теперь она первая)
+				r arct % рисуем, снимаются обе точки, значит массив стал на одну точку короче
+			}
+			for
+		end
+	} def
+	%[xn, yn]

@@ -1,0 +1,185 @@
+%(font-base.ps) stealfile
+{(eskd-b-glyphs/) stealfolder} /eskd-b-glyphs ifnotkey
+{(../ps-unicode/) stealfolder} /unicode ifnotkey
+
+(../ps-math/) stealfolder
+%(graph.ps) stealfile
+{(../ps-lib/)(traverse.ps) steal} /many-dict-copy ifnotkey
+
+%Матрицы прямого и наклонного шрифтов ЕСКД Б
+/eskd-b-orto [0.1 0 0 0.1 0 0] def
+/eskd-b-oblique [0.1 0 0.02679 0.1035 0 0] def
+/eskd-b-unoblique [1 0 -0.2679 1 0 0] def
+%Словарь-шаблон для чертёжных шрифтов
+/eskd-font-base
+<<
+	/afterGliph{
+		stroke
+	}
+	
+	%Процедура отмены наклона, нужно переопределить в наклонных шрифтах
+	/unoblique {}
+	
+	%[g]
+	/setconfig {
+		/g exch def %определяем g
+		/right g 1 sub def %легаси
+		/center right 2 div def
+		/left 0 def
+		/bottom 0 def
+		
+		g a add  
+		0
+		% Width
+			
+		-2 -3  
+		3 index  
+		h 2 add
+		% Bounding box
+		setcachedevice
+
+		d setlinewidth
+		
+		0.5 0.5 translate
+		
+		2 setlinecap			
+		
+	}
+	%[]
+	
+	/A {left bottom} def
+	/B {left top} def
+	/C {right top} def
+	/D {right bottom} def
+	/M {left middle} def
+	/N {center top} def
+	/O {right middle} def
+	/P {center bottom} def
+	/Q {center middle} def
+
+	/uppertop {
+		/top h 1 sub def
+	}
+	
+	/lowertop {
+		/top c 1 sub def
+	}
+	
+	/lowermiddle {
+		/middle c dec def
+		/top h dec def
+	}
+	
+	/middlefloor {
+		/middle top 2 div floor def
+	}
+	
+	/middleceil {
+		/middle top 2 div ceiling def
+	}
+	
+	/subglyph <<
+		/uml {
+			gsave
+				0 top 1 add translate
+				1 setlinejoin 
+				0 setlinecap
+				0.5 1 moveto
+				1 0 rlineto
+				1 0 rmoveto
+				1 0 rlineto
+				stroke
+			grestore
+		}
+		/breve {
+			gsave
+				0 top 1 add translate
+				0 setlinecap
+				1 1 moveto
+				right 1 sub 1 lineto
+				stroke
+			grestore
+		}
+		/dot {
+			gsave
+				0 top inc translate
+				1 setlinejoin 
+				0 setlinecap
+				0 2.5 moveto
+				0 1.5 lineto
+				stroke
+			grestore
+		}
+	>>
+
+>> 
+font3-base
+<< >> copy copy
+dup begin
+	(font-tools.ps) stealfile
+end
+
+def
+
+
+%=============
+
+/eskd-b-font-base
+<<
+	
+	%========== Специфичные члены для ЕСКД Б
+	/h 10 %высота прописных букв
+	/c 7  %высота строчных букв
+	/a 2  %расстояние между буквами
+	/b 17 %интерлиньяж
+	/e 6  %расстояние между словами
+	/d 1  % толщина линии
+	
+	/CharProcs eskd-b-glyphs
+	
+>>
+eskd-font-base
+<<>> copy copy
+def
+
+/eskd-utf-encoding-dict 
+	[
+		(0123456789АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя ) utf8load
+		(ABCDEFGHIJKLPMNOPQRSTUVWXYZ) utf8load
+		(abcdefghijklpmnopqrstuvwxyz) utf8load
+		16#2080 16#2081 16#2082 16#2083 16#2084 16#2085 16#2086 16#2087 16#2088 16#2089 
+		16#2300
+	]
+	encoding-from-points
+def
+
+%====
+%Шрифты ЕСКД
+
+/eskd-b-font 
+	[
+		eskd-utf-encoding-dict
+		eskd-b-font-base
+		<<
+			/FontMatrix eskd-b-oblique
+			/FontName (ESKD B)
+			
+			/unoblique{ eskd-b-unoblique concat}
+			
+		>>
+	]
+	many-dict-copy
+definefont pop
+
+/eskd-b-orto-font 
+	[
+		eskd-utf-encoding-dict
+		eskd-b-font-base
+		<<
+			/FontMatrix eskd-b-orto
+			/FontName (ESKD B orto)
+			
+		>>
+	]
+	many-dict-copy
+definefont pop
