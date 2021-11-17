@@ -1,0 +1,72 @@
+%Набор глифов знаков препинания ЕСКД Б
+
+<<
+	%/ExclamationMark {}
+	%/QuotationMark {}
+	%/NumberSign {}
+	%/DollarSign {}
+	%/PercentSign {}
+	%/Ampersand {}
+	%/Apostrophe {}
+	%/LeftParenthesis {}
+	%/RightParenthesis {}
+	%/Asterisk {}
+	/PlusSign {
+		5 setconfig
+		0 2 2dup right 5 2add setABCD
+		A C 2center setMNOPQ
+		M moveto
+		O lineto
+		N moveto
+		P lineto
+	}
+	/Comma {
+		1 setconfig lowertop
+		1 setlinejoin 
+		0 setlinecap
+		0 0.5 moveto
+		0 -0.5 lineto
+		-0.5 -1.5 lineto
+	}
+	/Hyphen-minus {
+		5 setconfig
+		0 2 2dup right 5 2add setABCD
+		A C 2center setMNOPQ
+		M moveto
+		O lineto
+	}
+	/FullStop {
+		%Точка
+		1 setconfig lowertop
+		1 setlinejoin 
+		0 setlinecap
+		0 0.5 moveto
+		0 -0.5 lineto
+	}
+	%/Solidus {}
+	/Colon {
+		1 setconfig lowertop
+		1 setlinejoin 
+		0 setlinecap
+		0 0.5 moveto
+		0 -0.5 lineto
+		0 top 0.5 add moveto
+		0 -1 rlineto
+		
+	}
+	/Semicolon {
+		1 setconfig lowertop
+		1 setlinejoin 
+		0 setlinecap
+		0 0.5 moveto
+		0 -0.5 lineto
+		-0.5 -1.5 lineto
+		0 top 0.5 add moveto
+		0 -1 rlineto		
+	}
+	%/Less-thanSign {}
+	%/EqualsSign 16#003D
+	%/Greater-thanSign {}
+	%/QuestionMark {}
+	%/CommercialAt {}
+>>
