@@ -34,8 +34,9 @@
 		-2 -3  
 		3 index  
 		h 2 add
+		%[width, 0, -2, -3, width, h+2]
 		% Bounding box
-		setcachedevice
+		setcachedevice %Устанавливает вектор начала следующего глифа и окно отрисовки текущего
 
 		d setlinewidth
 		
@@ -156,7 +157,7 @@ def
 %====
 %Шрифты ЕСКД
 
-/eskd-b-font 
+/eskd-b-font dup
 	[
 		eskd-utf-encoding-dict
 		eskd-b-font-base
@@ -169,9 +170,9 @@ def
 		>>
 	]
 	many-dict-copy
-definefont pop
+definefont def
 
-/eskd-b-orto-font 
+/eskd-b-orto-font dup
 	[
 		eskd-utf-encoding-dict
 		eskd-b-font-base
@@ -182,4 +183,4 @@ definefont pop
 		>>
 	]
 	many-dict-copy
-definefont pop
+definefont def
