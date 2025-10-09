@@ -57,14 +57,19 @@
 	/P {center bottom} def
 	/Q {center middle} def
 
+	%Установить верх буквы по уровню для заглавных букв
 	/uppertop {
 		/top h 1 sub def
+		/middle top 2 div def
 	}
 	
+	%Установить верх буквы по уровню для строчных букв
 	/lowertop {
 		/top c 1 sub def
+		/middle top 2 div def
 	}
 	
+	%Установить высоту строчных букв как средний уровень
 	/lowermiddle {
 		/middle c dec def
 		/top h dec def
@@ -147,10 +152,21 @@ def
 		(0123456789АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя ) utf8load
 		(ABCDEFGHIJKLPMNOPQRSTUVWXYZ) utf8load
 		(abcdefghijklpmnopqrstuvwxyz) utf8load
-		(.:,;+-) utf8load
+		(.:,;+-?!°) utf8load
 		16#2080 16#2081 16#2082 16#2083 16#2084 16#2085 16#2086 16#2087 16#2088 16#2089 
 		16#2300
+		
+		%greek
+		16#0391 16#0392 16#0393 16#0394 16#0395 16#0396 16#0397 16#0398 
+		16#0399 16#039A 16#039B 16#039C 16#039D 16#039E 16#039F 16#03A0 
+		16#03A1 16#03A3 16#03A4 16#03A5 16#03A6 16#03A7 16#03A8 16#03A9 
+		16#03B1 16#03B2 16#03B3 16#03B4 16#03B5 16#03B6 16#03B7 16#03B8 
+		16#03B9 16#03BA 16#03BB 16#03BC 16#03BD 16#03BE 16#03BF 16#03C0 
+		16#03C1 16#03C2 16#03C3 16#03C4 16#03C5 16#03C6 16#03C7 16#03C8 
+		16#03C9 16#03D1 16#03D5 16#03D6 16#03F0 16#03F1
+
 	]
+	%dup (encoding dict len) = length ==
 	encoding-from-points
 def
 

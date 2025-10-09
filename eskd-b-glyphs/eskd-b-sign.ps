@@ -1,7 +1,16 @@
 %Набор глифов знаков препинания ЕСКД Б
 
 <<
-	%/ExclamationMark {}
+	/ExclamationMark {
+		1 setconfig uppertop
+		B moveto
+		0 2.5 lineto
+		stroke
+		1 setlinejoin 
+		0 setlinecap
+		0 0.5 moveto
+		0 -0.5 lineto
+	}
 	%/QuotationMark {}
 	%/NumberSign {}
 	%/DollarSign {}
@@ -64,9 +73,33 @@
 		0 top 0.5 add moveto
 		0 -1 rlineto		
 	}
+	/DegreeSign {
+		4 setconfig uppertop
+		/bottom top 3 sub def
+		A moveto
+		1.5 C gliphO
+	}
 	%/Less-thanSign {}
-	%/EqualsSign 16#003D
+	%/EqualsSign {}
 	%/Greater-thanSign {}
-	%/QuestionMark {}
+	/QuestionMark {
+		5 setconfig uppertop
+		B moveto
+		C -1.5 1 2add
+		C
+		C 1.5 sub
+		curveto
+		O 1 add
+		Q 2 add
+		Q pop 4
+		curveto
+		Q pop 2.5 lineto
+		
+		stroke
+		1 setlinejoin 
+		0 setlinecap
+		2 0.5 moveto
+		2 -0.5 lineto
+	}
 	%/CommercialAt {}
 >>

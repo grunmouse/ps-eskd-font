@@ -7,10 +7,7 @@
 (eskd-font.ps) stealfile
 (../ps-eskd/) stealfolder
 
-in2mm
-
-0.1 setlinewidth
-
+/mesh {
 newpath
 30 1 200 {
 	dup
@@ -26,6 +23,17 @@ newpath
 	lineto
 } for
 stroke
+} def
+
+/moverow {
+	30 250 17 4 -1 roll mul sub moveto
+} def
+
+in2mm
+
+0.1 setlinewidth
+
+mesh
 
 
 %/eskd-b-font findfont
@@ -33,93 +41,151 @@ stroke
 10 scalefont
 setfont
 
-30 250 moveto
+0 moverow
 
 %ГЕ ПНЦТ ШЩ
 (ГЕЁ ПНЦТ ШЩ) utf8show
 
 %
-30 250 17 sub moveto
+1 moverow
 %Д ЛИЙК АМХ Ж
 (Д ЛИЙК АМХ Ж) utf8show
 
 
-30 250 17 2 mul sub moveto
+2 moverow
 %З ЧУЯРЬЪБВ
 (З ЧУЯРЬЪБВ) utf8show
 
 
-30 250 17 3 mul sub moveto
+3 moverow
 %Ы Ф С ЭО Ю
 (Ы Ф С ЭО Ю) utf8show
 
 
-30 250 17 4 mul sub moveto
+4 moverow
 %нхкл м ж
 (нхкл м ж) utf8show
 
 
-30 250 17 5 mul sub moveto
+5 moverow
 %чупийц тшщ
 (чупийц тшщ) utf8show
 
 
-30 250 17 6 mul sub moveto
+6 moverow
 %с эеоадвбр ю
 (с эеёоадвбр ю) utf8show
 
 
-30 250 17 7 mul sub moveto
+7 moverow
 %ф з гьъя ы
 (ф з гьъя ы) utf8show
 
-30 250 17 8 mul sub moveto
+8 moverow
 
-%(1 47 2356890) utf8show
+(1 47 2356890) utf8show
 
-30 250 17 9 mul sub moveto
+9 moverow
 (ABCDEFGHIJKLM) utf8show
 
-30 250 17 10 mul sub moveto
+10 moverow
 (NOPQRSTUVWXYZ) utf8show
 
-30 250 17 11 mul sub moveto
+11 moverow
 (abcdefghijklm) utf8show
 
-30 250 17 12 mul sub moveto
+12 moverow
 (nopqrstuvwxyz) utf8show
 
-30 250 17 13 mul sub moveto
+13 moverow
 [(H) utf8load 16#2080 16#2080 16#2081 (O) utf8load ( \342\214\200) utf8load 16#2300] utf8show
-11 100 010 10 001 100 10 000 000
+%11 100 010 10 001 100 10 000 000
 
 showpage
 in2mm
 
 0.1 setlinewidth
 
-newpath
-30 1 200 {
-	dup
-	270 moveto
-	20 lineto
-} for
+mesh
 
-20 1 270 {
-	dup
-	30 exch
-	moveto
-	200 exch
-	lineto
-} for
-stroke
-
-30 250 moveto
+0 moverow
 
 %.:,;!?
-(1.:,;!?) utf8show
+(1.:,;!?°) utf8show
 
-30 250 17 sub moveto
+1 moverow
 (+1-1) utf8show
+
+2 moverow
+[
+	16#0391
+	16#0392
+	16#0393
+	16#0394
+	16#0395
+	16#0396
+	16#0397
+	16#0398
+	16#0399
+	16#039A
+	16#039B
+	16#039C
+	16#039D
+] utf8show
+
+3 moverow
+[
+	16#039E
+	16#039F
+	16#03A0
+	16#03A1
+	16#03A3
+	16#03A4
+	16#03A5
+	16#03A6
+	16#03A7
+	16#03A8
+	16#03A9
+] utf8show
+
+4 moverow
+[
+	16#03B1
+	16#03B2
+	16#03B3
+	16#03B4
+	16#03B5
+	16#03B6
+	16#03B7
+	16#03B8
+	16#03B9
+	16#03BA
+	16#03BB
+	16#03BC
+	16#03BD
+] utf8show
+5 moverow
+[
+	16#03BE
+	16#03BF 
+	16#03C0
+	16#03C1
+	16#03C2
+	16#03C3
+	16#03C4
+	16#03C5
+	16#03C6
+	16#03C7
+	16#03C8
+	16#03C9
+]utf8show
+6 moverow
+[
+	16#03D1
+	16#03D5
+	16#03D6 
+	16#03F0
+	16#03F1
+] utf8show
 
 showpage

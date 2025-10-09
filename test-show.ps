@@ -1,0 +1,44 @@
+%!PS-Adobe-3.0
+
+
+%ps2pdf -dNOSAFER test-font.ps - ключи вызова
+(../ps-steal/steal.ps) run
+
+(eskd-font.ps) stealfile
+(../ps-eskd/) stealfolder
+
+in2mm
+
+0.1 setlinewidth
+
+/eskd-b-orto-font findfont
+5 scalefont
+setfont
+
+30 250 moveto
+
+%ГЕ ПНЦТ ШЩ
+(ГЕЁ ПНЦТ ШЩ) show
+
+30 250 17 sub moveto
+
+
+eskd-b-font 5 scalefont /CyrillicCapitalLetterGhe gliphto
+eskd-b-font 5 scalefont /CyrillicCapitalLetterIe gliphto
+eskd-b-font 10 scalefont /CyrillicCapitalLetterIo gliphto
+
+30 250 17 2 mul sub moveto
+
+(ГЕЁ ПНЦТ ШЩ) utf8points {
+	%point
+	unicode-name exch intcvn get
+	eskd-b-font 10 scalefont exch gliphto
+}forall
+
+
+
+(ГЕЁ ПНЦТ ШЩ) currentfont show-as-curve
+(ГЕЁ ПНЦТ ШЩ) eskd-b-font 5 scalefont calc-string-width ==
+
+showpage
+(ok)==
