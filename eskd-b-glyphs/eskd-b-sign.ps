@@ -19,7 +19,14 @@
 	%/Apostrophe {}
 	%/LeftParenthesis {}
 	%/RightParenthesis {}
-	%/Asterisk {}
+	/Asterisk {
+		5 setconfig	uppertop
+		/bottom top 5 sub def
+		0.5 bottom moveto
+		right 0.5 sub top gliphX
+		-0.5 top bottom add 2 div moveto
+		right 1 add 0 rlineto
+	}
 	/PlusSign {
 		5 setconfig
 		0 2 2dup right 5 2add setABCD
