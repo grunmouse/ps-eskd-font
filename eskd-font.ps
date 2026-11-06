@@ -2,8 +2,7 @@
 {(../ps-unicode/) stealfolder} /unicode ifnotkey
 
 (../ps-math/) stealfolder
-%(graph.ps) stealfile
-{(../ps-lib/)(traverse.ps) steal} /many-dict-copy ifnotkey
+{(../ps-lib/) stealfolder} /many-dict-copy ifnotkey
 
 %Матрицы прямого и наклонного шрифтов ЕСКД Б
 /eskd-b-orto [0.1 0 0 0.1 0 0] def
